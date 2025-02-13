@@ -123,19 +123,19 @@ vim.opt.breakindent = true
 
 -- Save undo history
 vim.opt.undofile = true
-vim.opt.fileencoding = 'utf-8' -- The encoding written to file
-vim.opt.termguicolors = true -- Used for colorscheme NeoSolarized
-vim.opt.backup = false -- This is recommended by coc.nvim
-vim.opt.writebackup = false -- This is recommended by coc.nvim
-vim.opt.syntax = 'enable' -- Enable syntax highlighting
-vim.opt.ruler = true -- Display line and column number
-vim.opt.hlsearch = true -- Highlighting search matches
-vim.opt.tabstop = 4 -- Number of spaces that a <Tab> in the file counts for
-vim.opt.shiftwidth = 4 -- Number of spaces to use for each step of (auto)indent
-vim.wo.wrap = false -- Lines longer than the width of the window will wrap or not
-vim.opt.incsearch = true -- The matched string is highlighted. The screen will be updated often, this is only useful on fast t
+vim.opt.fileencoding = 'utf-8'         -- The encoding written to file
+vim.opt.termguicolors = true           -- Used for colorscheme NeoSolarized
+vim.opt.backup = false                 -- This is recommended by coc.nvim
+vim.opt.writebackup = false            -- This is recommended by coc.nvim
+vim.opt.syntax = 'enable'              -- Enable syntax highlighting
+vim.opt.ruler = true                   -- Display line and column number
+vim.opt.hlsearch = true                -- Highlighting search matches
+vim.opt.tabstop = 4                    -- Number of spaces that a <Tab> in the file counts for
+vim.opt.shiftwidth = 4                 -- Number of spaces to use for each step of (auto)indent
+vim.wo.wrap = false                    -- Lines longer than the width of the window will wrap or not
+vim.opt.incsearch = true               -- The matched string is highlighted. The screen will be updated often, this is only useful on fast t
 vim.opt.backspace = 'start,eol,indent' -- Make backspace behave like most other editors
-vim.opt.wildmenu = true -- Display all matches of command line completion
+vim.opt.wildmenu = true                -- Display all matches of command line completion
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
@@ -717,7 +717,6 @@ require('lazy').setup({
 
   { -- Autoformat
     'stevearc/conform.nvim',
-    event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
     keys = {
       {
@@ -731,22 +730,6 @@ require('lazy').setup({
     },
     opts = {
       notify_on_error = false,
-      format_on_save = function(bufnr)
-        -- Disable "format_on_save lsp_fallback" for languages that don't
-        -- have a well standardized coding style. You can add additional
-        -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true }
-        local lsp_format_opt
-        if disable_filetypes[vim.bo[bufnr].filetype] then
-          lsp_format_opt = 'never'
-        else
-          lsp_format_opt = 'fallback'
-        end
-        return {
-          timeout_ms = 500,
-          lsp_format = lsp_format_opt,
-        }
-      end,
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
@@ -1042,5 +1025,5 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
---
+vim.g.user = os.getenv("USER") or os.getenv("USERNAME")
 require 'custom.keymaps'
