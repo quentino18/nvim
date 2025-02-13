@@ -1053,5 +1053,5 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
---
+vim.g.user = os.getenv("USER") or os.getenv("USERNAME")
 require 'custom.keymaps'
