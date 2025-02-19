@@ -28,6 +28,7 @@ return {
 			end, { desc = 'git [t]ig blame' })
 		end,
 	},
+	{	'preservim/tagbar'},
 	{	'mbbill/undotree'},
 	{	'powerman/vim-plugin-AnsiEsc'},
 }

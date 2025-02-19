@@ -18,6 +18,7 @@ vim.keymap.set('n', '<F6>', ':e %:p:s,.protected.h$,.X123X,:s,.c$,.protected.h,:
 
 vim.keymap.set('n', '<F8>', ':%s#\\<<c-r><c-w>\\>#<c-r><c-w>#gc', {desc = 'Open associated .protected.h file'})
 vim.keymap.set("n", "<F12>", ":Neotree toggle<CR>", { desc = "Open/Close file tree" })
+vim.keymap.set('n', '<leader><F12>', ':TagbarToggle fj<CR>', { desc = 'Toggle Tagbar' })
 
 vim.keymap.set('v', '<leader>y', '"+y', {noremap = true, desc = 'Copy to clipboard (visual)'})
 vim.keymap.set('n', '<leader>y', '"+y', {noremap = true, desc = 'Copy to clipboard (normal)'})
