@@ -87,7 +87,8 @@ vim.api.nvim_create_autocmd("BufWrite", {
 })
 
 -- COMMON DIE METHODS--------------------------------------------------------
-vim.keymap.set("n", "<leader>cad", ":!bash /produits/".. vim.g.user .."/cmd_check.sh -c %<CR>", {desc = 'Commmon die check', noremap = true, silent = true })
+vim.keymap.set("n", "<leader>cd", ":!bash /produits/".. vim.g.user .."/cmd_check.sh -c %<CR>", {desc = 'Commmon die check', noremap = true, silent = true })
+
 local function find_return_and_func_value(lines)
 
 	local last_line = lines[#lines] or ""
