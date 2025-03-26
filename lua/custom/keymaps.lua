@@ -152,14 +152,14 @@ local function common_die_zero()
 	local ret, func = find_return_and_func_value(lines)
 	if not (ret and func) then
 		print("Aucune correspondance trouvée")
-		return { 'common_die_zero( var, -1, " Error unknown_func return %d", var);' }
+		return { 'common_die_zero( var, -1, "Error unknown_func return %d", var);' }
 	end
 
 	-- Trouver la dernière valeur de `common_die_*`
 	local last_error_val = get_last_common_die_value(lines)
 
 	-- Générer la ligne `common_die_zero`
-	return { string.format('common_die_zero( %s, %d, " Error %s return %%d", %s);', ret, last_error_val, func, ret) }
+	return { string.format('common_die_zero( %s, %d, "Error %s return %%d", %s);', ret, last_error_val, func, ret) }
 end
 
 local function common_die_null()
@@ -188,14 +188,14 @@ local function common_die_snprintf()
 	local ret, func = find_return_and_func_value(lines)
 	if not (ret and func) then
 		print("Aucune correspondance trouvée")
-		return { 'common_die_snprintf( var, -1, sizeof(cmd), " Error snprintf return %d", var);' }
+		return { 'common_die_snprintf( var, -1, sizeof(cmd), "Error snprintf return %d", var);' }
 	end
 
 	-- Trouver la dernière valeur de `common_die_*`
 	local last_error_val = get_last_common_die_value(lines)
 
 	-- Générer la ligne `common_die_zero`
-	return { string.format('common_die_snprintf( %s, %d, sizeof(cmd), " Error snprintf return %%d", %s);', ret, last_error_val, ret) }
+	return { string.format('common_die_snprintf( %s, %d, sizeof(cmd), "Error snprintf return %%d", %s);', ret, last_error_val, ret) }
 end
 
 
