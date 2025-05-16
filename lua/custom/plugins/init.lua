@@ -31,4 +31,5 @@ return {
 	{	'preservim/tagbar'},
 	{	'mbbill/undotree'},
 	{	'powerman/vim-plugin-AnsiEsc'},
+	{	'andrewradev/linediff.vim'},
 }
