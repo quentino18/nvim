@@ -32,6 +32,11 @@ return {
 	},
 	{	'preservim/tagbar'},
 	{	'mbbill/undotree'},
-	{	'powerman/vim-plugin-AnsiEsc'},
+	{
+		'powerman/vim-plugin-AnsiEsc',
+		init = function()
+			vim.g.no_cecutil_maps = 1
+		end,
+	},
 	{	'andrewradev/linediff.vim'},
 }
