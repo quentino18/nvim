@@ -64,7 +64,7 @@ function ToggleCopyPaste()
 
 		-- Désactiver Gitsigns, nvim-lint, diagnostics et indent-blankline
 		require('gitsigns').detach()
-		vim.diagnostic.disable()
+		vim.diagnostic.enable( false)
 
 		if ok then
 			indent_blankline.setup({ enabled = false }) -- Désactive les barres d'indentation
