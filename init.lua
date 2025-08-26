@@ -580,7 +580,7 @@ require('lazy').setup({
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
           map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-          map('<leader>D', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          map('<leader>D', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
