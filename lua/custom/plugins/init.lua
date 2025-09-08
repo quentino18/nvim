@@ -39,4 +39,14 @@ return {
 		end,
 	},
 	{	'andrewradev/linediff.vim'},
+	{
+		'rcarriga/nvim-notify',
+		config = function()
+			vim.notify = require("notify")
+			vim.notify.setup({
+				timeout = 10000,
+				merge_duplicates = true,
+			})
+		end,
+	},
 }
