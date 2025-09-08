@@ -417,6 +417,9 @@ require('lazy').setup({
         extensions = {
           ['ui-select'] = { require('telescope.themes').get_dropdown() },
         },
+        defaults = {
+          layout_strategy='vertical',
+        },
       }
 
       -- Enable Telescope extensions if they are installed
