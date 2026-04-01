@@ -662,7 +662,6 @@ require('lazy').setup({
         hadolint = {},
         pylint = {},
         shellcheck = {},
-        stylua = {},
         ts_ls = {},
         yamllint = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
