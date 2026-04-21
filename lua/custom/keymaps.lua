@@ -209,13 +209,13 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
 
 --- Schiller snippets
 ls.add_snippets("c", {
-	snip({trig = "ptf",  dscr = "STD Debug printf"},    { t'printf("[',f(get_user, {}),t'_debug] %s:%d: ',               i(1, ''), t' %d\\n", __FUNCTION__, __LINE__, ',         i(2, 'var'), t');', i(0)}),
-	snip({trig = "bptf", dscr = "BLUE Debug printf"},   { t'printf("\\x1B[1;44m[',f(get_user, {}),t'_debug] %s:%d: ',    i(1, ''), t' %d\\x1B[0m\\n", __FUNCTION__, __LINE__, ', i(2, 'var'), t');', i(0)}),
-	snip({trig = "rptf", dscr = "RED Debug printf"},    { t'printf("\\x1B[1;41m[',f(get_user, {}),t'_debug] %s:%d: ',    i(1, ''), t' %d\\x1B[0m\\n", __FUNCTION__, __LINE__, ', i(2, 'var'), t');', i(0)}),
-	snip({trig = "gptf", dscr = "GREEN Debug printf"},  { t'printf("\\x1B[1;42;30m[',f(get_user, {}),t'_debug] %s:%d: ', i(1, ''), t' %d\\x1B[0m\\n", __FUNCTION__, __LINE__, ', i(2, 'var'), t');', i(0)}),
-	snip({trig = "yptf", dscr = "YELLOW Debug printf"}, { t'printf("\\x1B[1;43;30m[',f(get_user, {}),t'_debug] %s:%d: ', i(1, ''), t' %d\\x1B[0m\\n", __FUNCTION__, __LINE__, ', i(2, 'var'), t');', i(0)}),
-	snip({trig = "vptf", dscr = "PURPLE Debug printf"}, { t'printf("\\x1B[1;35m[',f(get_user, {}),t'_debug] %s:%d: ',           i(1, ''), t' %d\\x1B[0m\\n", __FUNCTION__, __LINE__, ', i(2, 'var'), t');', i(0)}),
-	snip({trig = "wptf", dscr = "WHITE Debug printf"},  { t'printf("\\x1B[1;100m[',f(get_user, {}),t'_debug] %s:%d: ',          i(1, ''), t' %d\\x1B[0m\\n", __FUNCTION__, __LINE__, ', i(2, 'var'), t');', i(0)}),
+	snip({trig = "ptf",  dscr = "STD Debug printf"},    { t'printf("[',f(get_user, {}),t'_debug] %s:%d: ',               i(1, ''), t'\\n", __FUNCTION__, __LINE__);', i(0)}),
+	snip({trig = "bptf", dscr = "BLUE Debug printf"},   { t'printf("\\x1B[1;44m[',f(get_user, {}),t'_debug] %s:%d: ',    i(1, ''), t'\\x1B[0m\\n", __FUNCTION__, __LINE__);', i(0)}),
+	snip({trig = "rptf", dscr = "RED Debug printf"},    { t'printf("\\x1B[1;41m[',f(get_user, {}),t'_debug] %s:%d: ',    i(1, ''), t'\\x1B[0m\\n", __FUNCTION__, __LINE__);', i(0)}),
+	snip({trig = "gptf", dscr = "GREEN Debug printf"},  { t'printf("\\x1B[1;42;30m[',f(get_user, {}),t'_debug] %s:%d: ', i(1, ''), t'\\x1B[0m\\n", __FUNCTION__, __LINE__);', i(0)}),
+	snip({trig = "yptf", dscr = "YELLOW Debug printf"}, { t'printf("\\x1B[1;43;30m[',f(get_user, {}),t'_debug] %s:%d: ', i(1, ''), t'\\x1B[0m\\n", __FUNCTION__, __LINE__);', i(0)}),
+	snip({trig = "vptf", dscr = "PURPLE Debug printf"}, { t'printf("\\x1B[1;35m[',f(get_user, {}),t'_debug] %s:%d: ',    i(1, ''), t'\\x1B[0m\\n", __FUNCTION__, __LINE__);', i(0)}),
+	snip({trig = "wptf", dscr = "WHITE Debug printf"},  { t'printf("\\x1B[1;100m[',f(get_user, {}),t'_debug] %s:%d: ',   i(1, ''), t'\\x1B[0m\\n", __FUNCTION__, __LINE__);', i(0)}),
 
 	snip({trig = "cd",  dscr = "common_die"}, { t'common_die( ', f(common_die), t', "Error ', i(1, 'function'),t'");'}),
 	snip({trig = "cdz" , dscr = "common_die_zero"}, f(common_die_zero)),
