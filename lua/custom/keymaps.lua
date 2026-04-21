@@ -198,6 +198,13 @@ local function common_die_snprintf()
 	return { string.format('common_die_snprintf( %s, %d, sizeof(cmd), "Error snprintf return %%d", %s);', ret, last_error_val, ret) }
 end
 
+-- Detect *.strace files
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+	pattern = "*.strace",
+	callback = function()
+		vim.bo.filetype = "strace"
+	end,
+})
 
 
 --- Schiller snippets
