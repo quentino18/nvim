@@ -25,6 +25,22 @@ vim.keymap.set('n', '<leader>y', '"+y', {noremap = true, desc = 'Copy to clipboa
 
 vim.keymap.set('n', '<leader>e', ':Explore<CR>', {desc = 'Explore'})
 
+-- Don't overwrite clipboard
+vim.keymap.set({ "n", "x" }, "d", '"_d')
+vim.keymap.set({ "n", "x" }, "c", '"_c')
+-- Normal mode special keys
+vim.keymap.set("n", "D", '"_D')
+vim.keymap.set("n", "C", '"_C')
+vim.keymap.set("n", "S", '"_S')
+vim.keymap.set("n", "s", '"_s')
+vim.keymap.set("n", "x", '"_x')
+vim.keymap.set("n", "X", '"_X')
+-- Visual mode special keys (THIS fixes your issue)
+vim.keymap.set("x", "D", '"_D')
+vim.keymap.set("x", "C", '"_C')
+-- Better visual paste
+vim.keymap.set("x", "p", '"_dP')
+
 -- Remapper "=" pour indenter et supprimer les espaces blancs en fin de ligne sur une sélection visuelle
 vim.api.nvim_set_keymap('x', '=', [[:<C-U>normal! gv=]<CR>:silent '<,'>s/\s\+$//ge<CR>]], { noremap = true, silent = true })
 
